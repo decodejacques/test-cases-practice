@@ -31,17 +31,17 @@ f(["", 4]); // undefined
 f(["abc", 0]); // a
 */
 function f(str, num) {
-  if(str.length === 0) return undefined;
+  if (str.length === 0) return undefined;
   var index = str.charAt(num);
-  if(index === 0) return undefined;
+  if (index === 0) return undefined;
   return index;
 }
 
 function runTest(i) {
-    var expected = outputs[i];
-    var input = inputs[i];
-    var actual = f(input[0], input[1]);
-    assert.deepEqual(actual, expected);
+  var expected = outputs[i];
+  var input = inputs[i];
+  var actual = f(input[0], input[1]);
+  assert.deepEqual(actual, expected);
 }
 
 runTest(0);

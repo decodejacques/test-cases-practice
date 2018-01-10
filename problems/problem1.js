@@ -19,15 +19,15 @@ let outputs = [
 
 // Make this function return the first letter of the string that is passed to it. If the string does not have a first letter, return undefined
 function f(str) {
-    var array = str.split("");
-    var firstLetter = array[0];
-    return firstLetter;
+  var array = str.split("");
+  var firstLetter = array[0];
+  return firstLetter;
 }
 
 function runTest(i) {
-    var expected = outputs[i];
-    var actual = f(inputs[i]);
-    assert.deepEqual(actual, expected);
+  var expected = outputs[i];
+  var actual = f(inputs[i]);
+  assert.deepEqual(actual, expected);
 }
 
 runTest(0);
