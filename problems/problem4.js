@@ -3,7 +3,13 @@ var assert = require('assert');
 // we need 8 test cases. I've provided the first 2
 let inputs = [
   ["hello", 4],
-  ["", 2]
+  ["", 2],
+  ["abc", 1],
+  ["chess", 3],
+  ["car", 2],
+  ["doggy", 3],
+  ["felt", 3],
+  ["chocolate", 5],
 ]
 
 let outputs = [
