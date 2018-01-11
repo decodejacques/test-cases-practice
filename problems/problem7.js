@@ -35,7 +35,6 @@ function f(arr) {
     if (typeof str == 'string' && typeof num == 'number') {
         if (str.length > 0 && num > 0) {
             return str.repeat(num);
-            console.log("--------" + arr + "Worked");
         }
         else {
             return "";
