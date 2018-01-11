@@ -2,11 +2,19 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+    "RADAR",
+    "kayak",
+    "javascript",
+    "welcome",
+    "hello"
 ]
 
 let outputs = [
-  
+  true,
+  true,
+  false,
+  false,
+  false
 ]
 
 /*
@@ -16,8 +24,10 @@ RADAR -> Yes
 JAVASCRIPT -> No
 */
 function f(str) {
-    
-}
+    var cleanStr = str.replace(/[^a-z]/ig, "").toLowerCase();
+    var invertedStr = cleanStr.split("").reverse().join("");
+    return cleanStr === invertedStr;
+} 
 
 function runTest(i) {
     if(i > inputs.length) throw new Error("You do not have enough test cases");
