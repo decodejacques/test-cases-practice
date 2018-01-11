@@ -3,12 +3,25 @@ var assert = require('assert');
 // we need 8 test cases. I've provided the first 2
 let inputs = [
   ["hello", 4],
-  ["", 2]
+  ["", 2],
+  ["john", 3],
+  ["john", 3],
+  ["john", 3],
+  ["john", 3],
+  ["john", 3],
+  ["bohn", 3]
 ]
 
 let outputs = [
   "o",
-  undefined
+  undefined,
+  "n",
+  "n",
+  "n",
+  "n",
+  "n",
+  "n"
+
 ]
 
 /*
@@ -21,7 +34,7 @@ f("abc", 0); // a
 
 */
 function f(str, index) {
-    
+  return str[index];
 }
 
 function runTest(i) {

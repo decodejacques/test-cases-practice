@@ -4,11 +4,20 @@ var assert = require('assert');
 // we need 6 test cases. 
 let inputs = [
   ["add", 10, 20],
-  ["chair", 20, 10]
+  ["chair", 20, 10],
+  ["mult", 20, 10],
+  ["sub", 20, 10],
+  ["add", 20, 10],
+  ["add", 30, 5]
 ]
 
 let outputs = [
-  30
+  30,
+  undefined,
+  200,
+  10,
+  30,
+  35
 ]
 
 /*
@@ -21,8 +30,22 @@ f("mult", 2, 3); // 6
 f("spoof", 10, 10); // undefined
 
 */
-function f(operation, firstArgument, secondArgument) {
-    
+function f(operation) {
+    var operation1 = operation[0];
+    var firstArgument1 = operation[1];
+    var secondArgument2 = operation[2];
+    var add = firstArgument1 + secondArgument2;
+    var sub = firstArgument1 - secondArgument2;
+    var mult = firstArgument1 * secondArgument2;
+    if (operation[0] === "add") {
+      return add;
+    } else if ( operation1 === "sub") {
+      return sub;
+    } else if ( operation1 === "mult")  {
+      return mult;
+    } else {
+      return undefined;
+    }
 }
 
 function runTest(i) {
