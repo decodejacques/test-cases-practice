@@ -10,13 +10,19 @@ let outputs = [
 ]
 
 /*
-Make this function return the input string, capitalized. You must use a for loop. For example:
+Make this function return the input string, capitalized. You must use 
+a for loop. For example:
 
 f("hello world"); // Hello World
 f("ALL YOUR BASE ARE BELONG"); // All Your Base Are Belong
 
 */
 function f(str) {
+    tempArray = str.split(' ');
+    for (let i=0; i>tempArray.length; i ++){
+        
+    }
+   
     
 }
 
