@@ -4,15 +4,15 @@ var assert = require('assert');
 let inputs = [
   "you are nice",
   "welcome to my country",
-  "hello mate",
+  "hello there",
   "how are you going",
   ""
 ]
 
 let outputs = [
   "nice",
-  "welcome",
-  "hello",
+  "country",
+  "there",
   "going",
   ""
 ]
@@ -27,7 +27,7 @@ function f(string) {
     var longest = 0;
     var word = "";
     for (var i = 0; i < str.length; i++) {
-        if (longest < str[i].length) {
+        if (longest <= str[i].length) {
             longest = str[i].length;
             word = str[i];
         }
