@@ -25,11 +25,12 @@ Use the operation argument to decide what this function will return.
 If it's "add", return the sum of the two numbers. "sub" return their difference. "mult" return their product.  
 Anything else return undefined. 
 For example:
-f("add", 10, 20); // 30
-f("mult", 2, 3); // 6
-f("spoof", 10, 10); // undefined
+f(["add", 10, 20]); // 30
+f(["mult", 2, 3]); // 6
+f(["spoof", 10, 10]); // undefined
 
 */
+
 function f(operation) {
     var operation1 = operation[0];
     var firstArgument1 = operation[1];
@@ -46,6 +47,8 @@ function f(operation) {
     } else {
       return undefined;
     }
+
+
 }
 
 function runTest(i) {
