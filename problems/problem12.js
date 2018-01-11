@@ -5,7 +5,7 @@ let inputs = [
     [[1, 2, 3], [4, 5, 6]],
     [[1, 2, 3, 4, 5, 6], [4, 5, 6]],
     [[1, 2, 3], [1, 2, 3, 4, 5, 6]],
-    ["hi", [1, 2, 3]],
+    [[1, 3, 4], [1, 2, 3]],
     [[1, 2, 3, 5], [2, 4, 5, 6]]
 ]
 
@@ -13,7 +13,7 @@ let outputs = [
     [1, 2, 3, 4, 5, 6],
     [1, 2, 3],
     [4, 5, 6],
-    undefined,
+    [4, 2],
     [1, 3, 4, 6]
 ]
 
@@ -28,11 +28,8 @@ uniqueElements([1,2,3], [1,2,3]); // []
 uniqueElements(2,3); // undefined, not arrays
 */
 function f(arr) {
-    Array.isArray(arr[0]) && Array.isArray(arr[1])
-
-    concat(array)
-
-    filter(e =>)
+    var newArr = !Array.isArray(arr[0]) && !Array.isArray(arr[1]) ? undefined : arr[0].concat(arr[1]).filter(e => arr[0].includes(e) && !arr[1].includes(e) || !arr[0].includes(e) && arr[1].includes(e));
+    return newArr;
 }
 
 function runTest(i) {
