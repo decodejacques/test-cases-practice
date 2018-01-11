@@ -2,11 +2,19 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+  "hi",
+  "",
+  "Hello my anticonstitutionnalisationnable people",
+  "One two three",
+  "Racecar up side down is racecar"
 ]
 
 let outputs = [
-  
+  "hi",
+  "",
+  "anticonstitutionnalisationnable",
+  "three",
+  "racecar"
 ]
 
 /*
@@ -14,7 +22,12 @@ Make this function return the longest word in the input string. If the input str
 If multiple words have the same length, return the last one that matches.
 */
 function f(str) {
-    
+    str.split(" ").toLowerCase();
+    var lgStr = "";
+    for(var i = 0; i < str.length; ++i){
+        if(lgStr.length <= str[i].length) lgStr = str[i];
+    }
+    return lgStr;
 }
 
 function runTest(i) {
