@@ -20,15 +20,10 @@ For example:
 
 uniqueElements([0,1,2,3], [1,3,4,5]); // [0,4,5]
 uniqueElements([1,2,3], [1,2,3]); // []
-uniqueElements(2,3); // undefined, not arrays
+u                                                             niqueElements(2,3); // undefined, not arrays
 */
-const f = function (arr1, arr2) {
-    return !Array.isArray(arr1) || !Array.isArray(arr2) ? undefined :
-        arr1.concat(arr2).filter(function (e) {
-            arr1.includes(e) && !arr2.includes(e) ||
-                !arr1.includes(e) &&
-                arr2.includes(e)
-        });
+var f = function (arr1, arr2) {
+    return !Array.isArray(arr1) || !Array.isArray(arr2) ? undefined : arr1.concat(arr2).filter(e => arr1.includes(e) && !arr2.includes(e) || !arr1.includes(e) && arr2.includes(e));
 }
 
 function runTest(i) {
@@ -39,7 +34,3 @@ function runTest(i) {
 }
 
 runTest(0);
-runTest(1);
-runTest(2);
-runTest(3);
-runTest(4);
