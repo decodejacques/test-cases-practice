@@ -1,3 +1,5 @@
+// SOLVED!
+
 var assert = require('assert');
 
 // we need 5 test cases. 
@@ -21,8 +23,8 @@ let outputs = [
 Make this function return the product of the two numbers that are passed to it. If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 */
 function f(x) {
-  if ((!isNaN(x[0]) && !isNaN(x[1])) && (x[0] !== ("" || '') && x[1] !== ("" || ''))){
-    var result = x[0]*x[1];
+  if ((!isNaN(x[0]) && !isNaN(x[1])) && (x[0] !== ("" || '') && x[1] !== ("" || ''))) {
+    var result = x[0] * x[1];
     return result;
   }
   return undefined;

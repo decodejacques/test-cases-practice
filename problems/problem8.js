@@ -1,3 +1,5 @@
+// SOLVED!
+
 var assert = require('assert');
 
 // we need 5 test cases. 
@@ -10,11 +12,11 @@ let inputs = [
 ]
 
 let outputs = [
-  "racecar",
-  "rettub",
-  "retupmoc",
-  "raj",
-  "mottob"
+    "racecar",
+    "rettub",
+    "retupmoc",
+    "raj",
+    "mottob"
 ]
 
 /*
@@ -24,15 +26,15 @@ You must use a for loop for this exercise.
 function f(str) {
     var newStr = str.split('');
     var newWord = [];
-    for(var i = 0; i<=str.length; ++i){
+    for (var i = 0; i <= str.length; ++i) {
         newWord.push(newStr[str.length - i]);
     }
-    
+
     return newWord.join('');
 }
 
 function runTest(i) {
-    if(i > inputs.length) throw new Error("You do not have enough test cases");
+    if (i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];
     var actual = f(inputs[i]);
     assert.deepEqual(actual, expected);

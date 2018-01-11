@@ -1,3 +1,5 @@
+// SOLVED!
+
 var assert = require('assert');
 
 // we need 5 test cases. I provided 1 input
