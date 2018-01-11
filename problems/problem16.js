@@ -10,7 +10,7 @@ let inputs = [
 ]
 
 let outputs = [
-    1,
+    01,
     5,
     9,
     18,
@@ -18,7 +18,7 @@ let outputs = [
 ]
 
 function f(digit) {
-    return digit%10 + (digit - digit % 10) / 10;
+    return digit % 10 + (digit - digit % 10) / 10;
 }
 
 function runTest(i) {
