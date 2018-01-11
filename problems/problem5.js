@@ -1,19 +1,20 @@
 var assert = require('assert');
 
 // we need 5 test cases. 
-let inputs = [
-  [2, 7]
-]
+let inputs = [[2, 7], ["a","b"], [2,"a"],[-3,3],[4,5]]
 
-let outputs = [
-  14
-]
+let outputs = [14,undefined,undefined,-9,20]
 
 /*
 Make this function return the product of the two numbers that are passed to it. If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 */
-function f(x, y) {
-    
+function f(array) {
+  var total = array[0] * array[1];
+  if(isNaN(total)){
+    return undefined;
+  }else{
+    return total;
+  }
 }
 
 function runTest(i) {

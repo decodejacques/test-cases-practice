@@ -31,7 +31,16 @@ Lorem ipsumos dolor sit amet consectetur
  even though there is a space before the a in adipisicing
 */
 function f(str) {
-    
+    var n = Math.floor(str.length / 40);
+    var newStr = str.split('');
+    for (var i = 1; i <= n; i++) {
+        if (newStr[i * 40] !== ' ') {
+            newStr.splice(i * 40, 0, '\n');
+
+        }
+        else if (newStr[i * 40] == ' ') { newStr.splice(i * 40, 1, '\n'); }
+    }
+    return newStr.join('');
 }
 
 function runTest(i) {
