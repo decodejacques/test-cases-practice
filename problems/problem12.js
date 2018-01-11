@@ -2,11 +2,19 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+    [[1, 2, 3], [4, 5, 6]],
+    [[1, 2, 3, 4, 5, 6], [4, 5, 6]],
+    [[1, 2, 3], [1, 2, 3, 4, 5, 6]],
+    ["hi", [1, 2, 3]],
+    [[1, 2, 3, 5], [2, 4, 5, 6]]
 ]
 
 let outputs = [
-  
+    [1, 2, 3, 4, 5, 6],
+    [1, 2, 3],
+    [4, 5, 6],
+    undefined,
+    [1, 3, 4, 6]
 ]
 
 /*
@@ -19,12 +27,16 @@ uniqueElements([0,1,2,3], [1,3,4,5]); // [0,4,5]
 uniqueElements([1,2,3], [1,2,3]); // []
 uniqueElements(2,3); // undefined, not arrays
 */
-function f(arr1, arr2) {
-    
+function f(arr) {
+    for(var i = 0; i < arr[0].length; ++i){
+        for(var z = 0; z < arr[1].length; ++i){
+
+        }
+    }
 }
 
 function runTest(i) {
-    if(i > inputs.length) throw new Error("You do not have enough test cases");
+    if (i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];
     var actual = f(inputs[i]);
     assert.deepEqual(actual, expected);

@@ -28,9 +28,9 @@ function f(arr) {
             arr.splice(i, 1, 0);
         }
     }
-    
-    return arr.reduce(function(a,b){
-        return a+b;
+
+    return arr.reduce(function (a, b) {
+        return a + b;
     });
 }
 
