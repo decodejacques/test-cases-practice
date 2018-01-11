@@ -3,20 +3,32 @@ var assert = require('assert');
 // we need 7 test cases. I've provided 2.
 let inputs = [
   [2, 4],
-  [-3, 3]
+  [-3, 3],
+  [1, 't'],
+  ['t', 't'],
+  [0, 5],
+  [15, '!'],
+  [50, 51]
 ]
 
 let outputs = [
   6,
-  0
+  0,
+  undefined,
+  undefined,
+  5,
+  undefined,
+  101
 ]
 
 /*
 Make this function return the sum of the two numbers that are passed to it. If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 */
-function f(x, y) {
-    
-}
+function f(arr) {
+  sum = arr[0] + arr[1];
+  if (typeof sum == 'number') {return sum;}
+  else {return undefined;}
+  }
 
 function runTest(i) {
     var expected = outputs[i];
