@@ -2,11 +2,11 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+  "Lorem ipsumos dolor sit amet consectetur adipisicing elit. Magni quisquam"
 ]
 
 let outputs = [
-  
+  "Lorem ipsumos dolor sit amet consecteturadipisicing elit. Magni quisquam"
 ]
 
 /*
@@ -31,11 +31,22 @@ Lorem ipsumos dolor sit amet consectetur
  even though there is a space before the a in adipisicing
 */
 function f(str) {
-    
+    var n = Math.floor(str.length / 40);
+    console.log(str.length);
+    var newStr = str.split('');
+    for (var i=1; i<=n; i++) {
+        if (newStr[i*40] !== ' ') {
+          console.log('condition working')
+          newStr.splice(i*40, 0, '\n');
+          
+        }
+        else if (newStr[i*40] == ' ') {newStr.splice(i*40, 1, '\n');}
+    }
+    return newStr.join('');
 }
 
 function runTest(i) {
-    if(i > inputs.length) throw new Error("You do not have enough test cases");
+    // if(i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];
     var actual = f(inputs[i]);
     assert.deepEqual(actual, expected);

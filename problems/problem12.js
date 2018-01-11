@@ -2,11 +2,11 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+
 ]
 
 let outputs = [
-  
+
 ]
 
 /*
@@ -20,11 +20,18 @@ uniqueElements([1,2,3], [1,2,3]); // []
 uniqueElements(2,3); // undefined, not arrays
 */
 function f(arr1, arr2) {
+    let newArr = [];
+    for(let i = 0; i < arr1.length; i++) {
+        for(let j = 0; j < arr2.length; j++) {
+            
+        }
+    }
+   
     
 }
 
 function runTest(i) {
-    if(i > inputs.length) throw new Error("You do not have enough test cases");
+    if (i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];
     var actual = f(inputs[i]);
     assert.deepEqual(actual, expected);
@@ -35,4 +42,3 @@ runTest(1);
 runTest(2);
 runTest(3);
 runTest(4);
-
