@@ -2,11 +2,19 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+    "kayak",
+    "radar",
+    "notakayak",
+    "hello",
+    "worldlrow"
 ]
 
 let outputs = [
-  
+    true,
+    true,
+    false,
+    false,
+    true
 ]
 
 /*
@@ -16,7 +24,16 @@ RADAR -> Yes
 JAVASCRIPT -> No
 */
 function f(str) {
-    
+    var arr = str.split("");
+    var rev = arr.reverse("");
+    var ans = rev.join("");
+
+    if (str == ans) {
+        return true;
+    }
+    else {
+        return false
+    }
 }
 
 function runTest(i) {
