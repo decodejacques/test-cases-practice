@@ -28,11 +28,11 @@ uniqueElements([1,2,3], [1,2,3]); // []
 uniqueElements(2,3); // undefined, not arrays
 */
 function f(arr) {
-    for(var i = 0; i < arr[0].length; ++i){
-        for(var z = 0; z < arr[1].length; ++i){
+    Array.isArray(arr[0]) && Array.isArray(arr[1])
 
-        }
-    }
+    concat(array)
+
+    filter(e =>)
 }
 
 function runTest(i) {
