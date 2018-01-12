@@ -2,20 +2,37 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
+    "racecAR",
+    "car",
+    "ogopogo",
+    "loop",
+    "Hanah"
   
 ]
 
 let outputs = [
+    true,
+    false,
+    true,
+    false,
+    true
   
 ]
 
 /*
-Make this function return true if the input string is a palindrome, and false otherwise. A palindrome is simply a string that is the same if you reverse it.
+Make this function return true if the input string is a palindrome, 
+and false otherwise. A palindrome is simply a string that is the same 
+if you reverse it.
 
 RADAR -> Yes
 JAVASCRIPT -> No
 */
+
 function f(str) {
+    var lowStr = str.toLowerCase();
+    if(lowStr === lowStr.split('').reverse().join('')){
+        return true
+    }else {return false};
     
 }
 

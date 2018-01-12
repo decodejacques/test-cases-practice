@@ -19,8 +19,21 @@ uniqueElements([0,1,2,3], [1,3,4,5]); // [0,4,5]
 uniqueElements([1,2,3], [1,2,3]); // []
 uniqueElements(2,3); // undefined, not arrays
 */
+
+/*
+member(x,lst) returns true if and only if x is an element of lst
+*/
 function f(arr1, arr2) {
-    
+    uniArr=[];
+    for (i=0; i < arr1.length; i ++){
+        for (j=0; j<arr2.length; j ++){
+            if (arr1[i]!== arr2[j]){
+                uniArr.push(arr1[i]);
+
+            }
+        }
+    }
+    return uniArr
 }
 
 function runTest(i) {

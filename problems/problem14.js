@@ -11,7 +11,8 @@ let outputs = [
 
 /*
 Make this function return the input string wrapped to 40 characters per line. 
-This means you'll have to insert a newline \n character after every 40 characters in the input string. 
+This means you'll have to insert a newline \n character after every 40 
+ characters in the input string. 
 If the next character after a cut is a space, then do not display it. 
 
 For example with the input:
