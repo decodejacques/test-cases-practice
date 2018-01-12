@@ -31,9 +31,7 @@ function f(str) {
         return a.length < b.length;
     });
     return sortedArr[0]
-
 }
-
 
 
 function runTest(i) {
