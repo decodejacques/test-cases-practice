@@ -2,11 +2,19 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+  [[2, 5, 6],[2, 7, 1]],
+  [[1],[1]],
+  ["abc"],
+  [[2,2,3],[3,5,5]],
+  [[7,8],[8,9]]
 ]
 
 let outputs = [
-  
+  [5,6,7,1],
+  [],
+  undefined,
+  [3,5],
+  [7,9]
 ]
 
 /*
@@ -20,7 +28,11 @@ uniqueElements([1,2,3], [1,2,3]); // []
 uniqueElements(2,3); // undefined, not arrays
 */
 function f(arr1, arr2) {
-    
+    let newArr = [];
+    for (var i = 0; i < arr1.length; i++){
+
+    }
+
 }
 
 function runTest(i) {

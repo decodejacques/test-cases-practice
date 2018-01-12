@@ -26,16 +26,16 @@ Make this function return the sum of the two numbers that are passed to it. If o
 */
 function f(x, y) {
   let sum = x + y;
-  if (isNaN(x) || isNaN(y)){
+  if (isNaN(x) || isNaN(y)) {
     return undefined;
   }
-    return sum;
+  return sum;
 }
 
 function runTest(i) {
-    var expected = outputs[i];
-    var actual = f(...inputs[i]);
-    assert.deepEqual(actual, expected);
+  var expected = outputs[i];
+  var actual = f(...inputs[i]);
+  assert.deepEqual(actual, expected);
 }
 
 runTest(0);

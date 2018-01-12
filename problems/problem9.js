@@ -22,15 +22,16 @@ Make this function return the longest word in the input string. If the input str
 If multiple words have the same length, return the last one that matches.
 */
 function f(str) {
+    ////////// Need to revise 
     // if (str = "") {
     //     return str;
     // } else {
-        let arr = str.split(" ");
-        let sortedArr = arr.sort(function (a, b) {
-            return a.length < b.length;
-        });
-        return sortedArr[0]
-    
+    let arr = str.split(" ");
+    let sortedArr = arr.sort(function (a, b) {
+        return a.length < b.length;
+    });
+    return sortedArr[0]
+
 }
 
 
@@ -39,7 +40,6 @@ function runTest(i) {
     if (i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];
     var actual = f(inputs[i]);
-    console.log("runTest Log:", expected, actual);
     assert.deepEqual(actual, expected);
 }
 

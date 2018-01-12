@@ -1,12 +1,20 @@
 var assert = require('assert');
 
-// we need 5 test cases. 
+// we need 5 test cases.
 let inputs = [
-  
+  "Lol",
+  "Robot",
+  "aNa",
+  "avId diva",
+  "apple"
 ]
 
 let outputs = [
-  
+  true,
+  false,
+  true,
+  true,
+  false
 ]
 
 /*
@@ -16,7 +24,10 @@ RADAR -> Yes
 JAVASCRIPT -> No
 */
 function f(str) {
-    
+    if (str.toLowerCase() == str.split("").reverse().join("").toLowerCase()){
+        return true;
+    }
+    return false;
 }
 
 function runTest(i) {

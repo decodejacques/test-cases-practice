@@ -2,7 +2,7 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+  "This is my first test string that I'm trying to split and break into more than one line"
 ]
 
 let outputs = [
