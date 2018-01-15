@@ -2,11 +2,24 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  "This is my first test string that I'm trying to split and break into more than one line"
+  "This is my first test string that I'm trying to split and break into more than one line",
+  "This is a shorter string with no break",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non nisl justo.",
+  "String number four out of five that wraps after 40 characters",
+  "Very short string no break"
+
 ]
 
 let outputs = [
-  
+  "This is my first test string that I'm \n
+  trying to split and break into more than \n
+  one line",
+  "This is a shorter string with no break",
+  "Lorem ipsum dolor sit amet, consectetur \n
+  adipiscing elit. Sed non nisl justo.",
+  "String number four out of five that \n
+  wraps after 40 characters",
+  "Very short string no break"
 ]
 
 /*

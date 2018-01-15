@@ -27,18 +27,40 @@ uniqueElements([0,1,2,3], [1,3,4,5]); // [0,4,5]
 uniqueElements([1,2,3], [1,2,3]); // []
 uniqueElements(2,3); // undefined, not arrays
 */
-function f(arr1, arr2) {
-    let newArr = [];
-    for (var i = 0; i < arr1.length; i++){
 
-    }
+// function f(arr1, arr2) {
+//     let newArr = [];
+//     for (var i = 0; i < arr1.length; i++){
+//     }
+// }
 
+function member(x, lst) {
+  for (var i = 0; i < lst.length; i++) {
+      if (x == lst[i]) return true;
+  }
+  return false;
+}
+function f(arr) {
+  var arr1 = arr[0];
+  var arr2 = arr[1];
+  var ret = [];
+  for (var i = 0; i < arr1.length; i++) {
+      if (!member(arr1[i], arr2) && !member(arr1[i], ret)) {
+          ret.push(arr1[i]);
+      }
+  }
+  for (var i = 0; i < arr2.length; i++) {
+      if (!member(arr2[i], arr1) && !member(arr2[i], ret)) {
+          ret.push(arr2[i]);
+      }
+  }
+  return ret;
 }
 
 function runTest(i) {
     if(i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];
-    var actual = f(inputs[i]);
+    var actual = f(...inputs[i]);
     assert.deepEqual(actual, expected);
 }
 

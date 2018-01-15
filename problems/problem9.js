@@ -2,18 +2,18 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-    "This is string num one",
-    "I'm another dang string",
-    "Short and sweeeeet",
-    "Very looooooooooong string, that I am",
+    "abba aa b bba",
+    "x yy zzz",
+    "a cd b",
+    "multiple words",
     ""
 ]
 
 let outputs = [
-    "string",
-    "another",
-    "sweeeeet",
-    "looooooooooong",
+    "abba",
+    "zzz",
+    "cd",
+    "multiple",
     ""
 ]
 
@@ -27,12 +27,25 @@ function f(str) {
     //     return str;
     // } else {
     let arr = str.split(" ");
+
     let sortedArr = arr.sort(function (a, b) {
         return a.length < b.length;
     });
     return sortedArr[0]
 }
 
+
+function f(str) {
+    var words = str.split(" ")
+    var ret = "";
+    for(var i = 0; i < words.length; i++) {
+        var theString = words[i];
+        if(theString.length >= ret.length) {
+            ret = theString;
+        }
+    }
+    return ret;
+}
 
 function runTest(i) {
     if (i > inputs.length) throw new Error("You do not have enough test cases");
