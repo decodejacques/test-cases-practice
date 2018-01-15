@@ -103,21 +103,47 @@ If the array is empty, return zero.
 
 // console.log(f([0,1,2,3], [1,3,4,5]));
 
-function f(array1, array2) {	
-var unique = [];
-for(var i = 0; i < array1.length; i++){
-    var found = false;
+// function f(array1, array2) {	
+// var unique = [];
+// for(var i = 0; i < array1.length; i++){
+//     var found = false;
 
-    for(var j = 0; j < array2.length; j++){ // j < is missed;
-     if(array1[i] == array2[j]){
-      found = true;
-      break; 
-    }
-   }
-   if(found == false){
-   unique.push(array1[i]);
+//     for(var j = 0; j < array2.length; j++){ // j < is missed;
+//      if(array1[i] == array2[j]){
+//       found = true;
+//       break; 
+//     }
+//    }
+//    if(found == false){
+//    unique.push(array1[i]);
+//   }
+// }
+// }
+
+
+function member (x, lst){
+  for (let i =0; i< lst.length; i ++ ){
+      if (lst[i]=== x) {return true}
+  } 
+  return false
+};
+function f(arr1, arr2) {
+  uniArr = [];
+  for (let i = 0;i<arr1.length; i ++){
+      if (member(arr1[i],arr2) === false && member(arr1,uniArr)===false) 
+      {
+          uniArr.push(arr1[i]);
+      }  
+  
+  }return uniArr;
+  for (let i = 0;i<arr2.length; i ++){
+      if (member(arr2[i],arr1) === false && member(arr2,uniArr)===false) 
+      {
+          uniArr.push(arr2[i]);
+      }  
   }
-}
-}
+  return uniArr;
 
-console.log(f([0,1,2,3], [1,3,4,5]));
+};
+
+console.log(f([2,3,4],[2,5,6]));

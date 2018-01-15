@@ -7,9 +7,9 @@ let inputs = [
   ["chair", 20, 10],
   ["mult", 10, 20],
   ["sub", 10, 20],
-  ["hello", 6, 6]
+  ["hello", 6, 6],
   ["sub", 10, {}]
-]
+];
 
 let outputs = [
   30,
@@ -46,11 +46,12 @@ function f(operation, firstArgument, secondArgument) {
     return undefined
   }
   }
-    
+ 
   function runTest(i) {
     if(i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];
-    var actual = f(...inputs[i]);
+    var input = inputs[i];
+    var actual = f(input[0],input[1],input[2]);
     assert.deepEqual(actual, expected);
 }
 
