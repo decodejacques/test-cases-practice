@@ -2,11 +2,23 @@ var assert = require('assert');
 
 // we need 7 test cases. 
 let inputs = [
-  
+  ['blue', 2],
+  ['na na na ', 3],
+  ['sa', 8],
+  ['asdasd', 3],
+  ['true', 'bark'],
+  [undefined, 4],
+  ['armor', 0]
 ]
 
 let outputs = [
-  
+  'blueblue',
+  'na na na na na na na na na ',
+  'sasasasasasasasa',
+  'asdasdasdasdasdasd',
+  undefined,
+  undefined,
+  ''
 ]
 
 /*
@@ -19,8 +31,21 @@ f("foo", 3) // "foofoofoo"
 f("fo", 3) // "fofofo"
 f("foo", -1) // undefined
 */
-function f(str, n) {
-    
+function f(str) {
+    var word = str[0];
+    var num = str[1];
+    var empty = '';
+    if (typeof word !== 'string') {
+        return undefined;
+    } else if (isNaN(num)) {
+        return undefined;
+    } else if (num <= 0) {
+        return empty;
+    } else if (num > 0) {
+        return word.repeat(num);
+    } else {
+        return undefined;
+    }
 }
 
 function runTest(i) {

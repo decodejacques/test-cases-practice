@@ -2,7 +2,7 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+  ''
 ]
 
 let outputs = [
