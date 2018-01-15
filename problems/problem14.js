@@ -8,15 +8,15 @@ let inputs = [
     "0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789",
     "0123456789012345678901234567890123456789 0123456789012345678901234567890123456789",
     "                                         Second row",
-    "                               First rowSecond row"
+    "                               First row and Second row"
 ]
 
 let outputs = [
     "0123456789012345678901234567890123456789\n0123456789012345678901234567890123456789",
     "0123456789 0123456789 0123456789 0123456\n789 0123456789 0123456789 0123456789",
     "0123456789012345678901234567890123456789\n0123456789012345678901234567890123456789",
-    "\nSecond row",
-    "First row\nSecond row"
+    "Second row",
+    "First row and Second row"
 ]
 
 /*
@@ -41,13 +41,31 @@ Lorem ipsumos dolor sit amet consectetur
  even though there is a space before the a in adipisicing
 */
 function f(str) {
-    str.trim();
-    if (str.length > 40) {
-        var firStr = str.slice(0, 40);
-        var secStr = str.slice(40);
-        var newStr = [firStr.trim(), "\n", secStr.trim()].join("");
-        return newStr;
+    console.log("\nFunction Start\n" + str + "\n");
+    var newStr = str.trim();
+    console.log(newStr);
+    var arr = [];
+    var endLoop = true;
+    var i = 0;
+    
+    if (newStr.length > 40) {
+        while (endLoop === true) {
+            console.log("LOOP");
+            if (newStr.length > 40 * i) {
+                arr[i] = newStr.slice(40 * i, 40 * (i + 1)).trimLeft();
+                console.log(arr[i]);
+            }
+
+            else {
+                endLoop = false;
+            }
+            ++i;
+
+            if (str.length === 40 * i) endLoop = false;
+        }
+        return arr.join("\n");
     }
+    return newStr;
 }
 
 function runTest(i) {
