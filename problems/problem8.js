@@ -2,19 +2,43 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+    "how are you",
+    "",
+    "murder for a jar of red rum",
+    [],
+    {}
 ]
 
 let outputs = [
-  
+  "uoy era woh",
+  undefined,
+  "mur der fo raj a rof redrum",
+  undefined,
+  undefined
 ]
 
 /*
-Make this function return the input string, reversed. For example "hello" would return "olleh" and "how are you" would return "uoy era woh".
+Make this function return the input string, reversed. 
+For example "hello" would return "olleh" and "how are you" would return "uoy era woh".
 You must use a for loop for this exercise.
 */
-function f(str) {
-    
+
+/* More elegant... but no loop.
+const f = str => {
+    return str.split('').reverse().join('');
+}
+*/
+
+const f = str => {
+    if (typeof str === "string" && str.length > 0) {
+        let result = "";
+        for (i = str.length-1; i >= 0; i--) {
+            result += str[i];
+        }
+        return result;
+    } else {
+        return undefined;
+    }
 }
 
 function runTest(i) {
