@@ -2,11 +2,23 @@ var assert = require('assert');
 
 // we need 7 test cases. 
 let inputs = [
-  
-]
+    ['abc', 3],
+    [' defg ', 5],
+    ['abc', -10],
+    ['abc', 'abc'],
+    ['abc', -4],
+    ['choo-choo', 5],
+    ['cha cha cha ', 6]
+];
 
 let outputs = [
-  
+    'abcabcabc',
+    ' defg  defg  defg  defg  defg ',
+    '',
+    undefined,
+    '',
+    'choo-choochoo-choochoo-choochoo-choochoo-choo',
+    'cha cha cha cha cha cha cha cha cha cha cha cha cha cha cha cha cha cha '
 ]
 
 /*
@@ -20,7 +32,17 @@ f(["fo", 3]) // "fofofo"
 f(["foo", -1]) // undefined
 */
 function f(arr) {
-    
+        switch (true) {
+            case arr[1] < 1:
+              return "";
+              break;
+            case Number.isInteger(arr[1]) === false:
+              return undefined;
+              break;
+            case Number.isInteger(arr[1]) === true:
+              return arr[0].repeat(arr[1]);
+              break;             
+}
 }
 
 function runTest(i) {
