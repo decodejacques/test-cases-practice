@@ -2,11 +2,19 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+  "hello people of the world, today is a great day!",
+  "Who runs the world? Those behind the scenes...",
+  "DECODEMTL is making coders out of no-ders",
+  "Canada has a number of provinces within its borders",
+  "WeWork is a modern office solution for modern businesses"
 ]
 
 let outputs = [
-  
+  "hello people of the world, today is a gr\neat day!",
+  "Who runs the world? Those behind the sce\nnes...",
+  "DECODEMTL is making coders out of no-der\ns",
+  "Canada has a number of provinces within \nits borders",
+  "WeWork is a modern office solution for m\nodern businesses"
 ]
 
 /*
@@ -31,7 +39,21 @@ Lorem ipsumos dolor sit amet consectetur
  even though there is a space before the a in adipisicing
 */
 function f(str) {
-    
+    var myString = str;
+    ans = [];
+      while (myString.length > 40) {
+          ans.push(myString.slice(0,40) + "\n");
+      
+          myString = myString.slice(40);
+  
+          if (myString.charAt(0) == " ") {
+              myString = myString.slice(1);
+          }
+      }
+  
+      ans.push(myString);
+      return ans.join("");
+
 }
 
 function runTest(i) {
